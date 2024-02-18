@@ -1,20 +1,13 @@
-import {
-  View,
-  Text,
-  Pressable,
-  FlatList,
-  Image,
-  SafeAreaView,
-  StyleSheet,
-} from 'react-native';
+import { FlatList, SafeAreaView, StyleSheet, Image } from 'react-native';
 import { colors } from '../constants/colors';
+import HomeTopContainer from '../components/HomeTopContainer';
+import StoryList from '../components/StoryList';
 
 const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <Text>HomeScreen</Text>
-      </View>
+      <HomeTopContainer />
+      <StoryList />
     </SafeAreaView>
   );
 };
