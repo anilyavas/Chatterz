@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import { colors } from '../constants/colors';
 import { AntDesign, Ionicons } from '@expo/vector-icons';
+import SocialContainer from '../components/SocialContainer';
 
 const { width, height } = Dimensions.get('window');
 const OnBoardingScreen = () => {
@@ -18,17 +19,7 @@ const OnBoardingScreen = () => {
       <Text style={styles.description}>
         Our chat app is a perfect way to stay connected with friends and family.
       </Text>
-      <View style={styles.socialContainer}>
-        <Pressable>
-          <Ionicons name='logo-facebook' size={45} color={colors.snow} />
-        </Pressable>
-        <Pressable>
-          <AntDesign name='google' size={45} color={colors.snow} />
-        </Pressable>
-        <Pressable>
-          <AntDesign name='apple1' size={45} color={colors.snow} />
-        </Pressable>
-      </View>
+      <SocialContainer />
       <View
         style={{
           alignItems: 'center',
@@ -112,13 +103,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     paddingHorizontal: 5,
   },
-  socialContainer: {
-    flexDirection: 'row',
-    gap: 20,
-    justifyContent: 'center',
-    paddingTop: 30,
-    alignItems: 'center',
-  },
+
   text: {
     color: colors.snow,
     fontSize: 20,
