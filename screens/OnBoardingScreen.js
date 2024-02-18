@@ -67,7 +67,7 @@ const OnBoardingScreen = () => {
         >
           Existing account?{' '}
           <Pressable>
-            <Text style={{ color: colors.snow, fontSize: 15 }}>Log in</Text>
+            <Text style={{ color: colors.snow, fontSize: 15 }}> Log in</Text>
           </Pressable>
         </Text>
       </View>
@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.black,
   },
+
   title: {
     fontFamily: 'Poppins-Bold',
     fontSize: 20,
