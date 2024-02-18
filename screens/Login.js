@@ -3,7 +3,7 @@ import { colors } from '../constants/colors';
 import SocialContainer from '../components/SocialContainer';
 import Button from '../components/Button';
 
-const Login = () => {
+const Login = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.welcomeContainer}>
@@ -31,7 +31,11 @@ const Login = () => {
           autoCapitalize='none'
         />
       </View>
-      <Button buttonText={'Login'} secondButtonText={'Forgot Password?'} />
+      <Button
+        onPress={() => navigation.navigate('Home')}
+        buttonText={'Login'}
+        secondButtonText={'Forgot Password?'}
+      />
     </SafeAreaView>
   );
 };

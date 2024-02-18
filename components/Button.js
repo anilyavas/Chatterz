@@ -2,10 +2,10 @@ import { Text, Pressable, StyleSheet, Dimensions, View } from 'react-native';
 import { colors } from '../constants/colors';
 
 const { width, height } = Dimensions.get('window');
-const Button = ({ buttonText, secondButtonText }) => {
+const Button = ({ buttonText, secondButtonText, onPress }) => {
   return (
     <View style={styles.container}>
-      <Pressable style={styles.button}>
+      <Pressable onPress={onPress} style={styles.button}>
         <Text style={styles.buttonText}>{buttonText}</Text>
       </Pressable>
       <Pressable>

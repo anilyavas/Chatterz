@@ -3,7 +3,7 @@ import { colors } from '../constants/colors';
 import SignupForm from '../components/SignupForm';
 import Button from '../components/Button';
 
-const Signup = () => {
+const Signup = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.welcomeContainer}>
@@ -17,7 +17,10 @@ const Signup = () => {
       <SignupForm text={'Your email'} />
       <SignupForm text={'Password'} />
       <SignupForm text={'Confirm Password'} />
-      <Button buttonText={'Sign up'} />
+      <Button
+        buttonText={'Sign up'}
+        onPress={() => navigation.navigate('Login')}
+      />
     </SafeAreaView>
   );
 };
