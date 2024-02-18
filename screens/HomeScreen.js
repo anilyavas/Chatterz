@@ -8,6 +8,7 @@ const HomeScreen = () => {
     <SafeAreaView style={styles.container}>
       <HomeTopContainer />
       <StoryList />
+      {/* BottomSheet will next */}
     </SafeAreaView>
   );
 };

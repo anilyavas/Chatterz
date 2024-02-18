@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     gap: 20,
     flexGrow: 1,
     paddingHorizontal: 10,
-    paddingTop: 50,
+    paddingTop: 70,
   },
   container: {
     alignItems: 'center',
