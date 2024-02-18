@@ -1,11 +1,4 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  TextInput,
-  SafeAreaView,
-  Pressable,
-} from 'react-native';
+import { View, Text, StyleSheet, TextInput, SafeAreaView } from 'react-native';
 import { colors } from '../constants/colors';
 import SocialContainer from '../components/SocialContainer';
 import Button from '../components/Button';

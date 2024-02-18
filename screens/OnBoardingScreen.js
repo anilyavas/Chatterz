@@ -7,11 +7,10 @@ import {
   Dimensions,
 } from 'react-native';
 import { colors } from '../constants/colors';
-import { AntDesign, Ionicons } from '@expo/vector-icons';
 import SocialContainer from '../components/SocialContainer';
 
 const { width, height } = Dimensions.get('window');
-const OnBoardingScreen = () => {
+const OnBoardingScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Chatterz</Text>
@@ -29,13 +28,17 @@ const OnBoardingScreen = () => {
         <Text style={styles.text}>OR</Text>
       </View>
       <View style={{ paddingTop: 30 }}>
-        <Pressable style={styles.button}>
+        <Pressable
+          onPress={() => navigation.navigate('Signup')}
+          style={styles.button}
+        >
           <Text
             style={{
               fontFamily: 'Poppins-SemiBold',
               color: colors.green,
-              fontSize: 20,
+              fontSize: 18,
               alignSelf: 'center',
+              paddingVertical: 8,
             }}
           >
             Sign up with email
@@ -44,7 +47,7 @@ const OnBoardingScreen = () => {
       </View>
       <View
         style={{
-          paddingTop: 25,
+          paddingTop: 20,
           justifyContent: 'center',
           alignItems: 'center',
         }}
@@ -57,7 +60,7 @@ const OnBoardingScreen = () => {
           }}
         >
           Existing account?{' '}
-          <Pressable>
+          <Pressable onPress={() => navigation.navigate('Login')}>
             <Text style={{ color: colors.snow, fontSize: 15 }}> Log in</Text>
           </Pressable>
         </Text>
