@@ -18,18 +18,20 @@ const Login = () => {
       <View style={styles.loginContainer}>
         <Text style={styles.email}>Email</Text>
         <TextInput
-          style={styles.textinput}
+          style={styles.textInput}
           placeholder='email@email.com'
           placeholderTextColor={colors.snow}
+          autoCapitalize='none'
         />
         <Text style={styles.email}>Password</Text>
         <TextInput
-          style={styles.textinput}
+          style={styles.textInput}
           placeholder='*********'
           placeholderTextColor={colors.snow}
+          autoCapitalize='none'
         />
       </View>
-      <Button buttonText={'Login'} />
+      <Button buttonText={'Login'} secondButtonText={'Forgot Password?'} />
     </SafeAreaView>
   );
 };
@@ -55,7 +57,7 @@ const styles = StyleSheet.create({
     fontSize: 15,
     padding: 15,
   },
-  textinput: {
+  textInput: {
     borderBottomColor: colors.grey,
     borderBottomWidth: 0.5,
     paddingLeft: 15,
