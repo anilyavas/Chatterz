@@ -1,4 +1,4 @@
-import { Dimensions, SafeAreaView, StyleSheet, View } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import { colors } from '../constants/colors';
 import HomeTopContainer from '../components/HomeTopContainer';
 import StoryList from '../components/StoryList';
@@ -7,8 +7,15 @@ import Messages from './Messages';
 import Calls from './Calls';
 import BottomSheet from '@gorhom/bottom-sheet';
 import { useMemo } from 'react';
-import { AntDesign, Feather } from '@expo/vector-icons';
+import {
+  AntDesign,
+  Feather,
+  FontAwesome5,
+  SimpleLineIcons,
+} from '@expo/vector-icons';
 import { useTheme } from 'react-native-paper';
+import Contacts from './Contacts';
+import Settings from './Settings';
 
 const Tab = createMaterialBottomTabNavigator();
 const HomeScreen = () => {
@@ -44,6 +51,32 @@ const HomeScreen = () => {
             options={{
               tabBarIcon: () => (
                 <Feather name='phone-call' size={30} color={colors.grey} />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name='Contacts'
+            component={Contacts}
+            options={{
+              tabBarIcon: () => (
+                <FontAwesome5
+                  name='user-circle'
+                  color={colors.grey}
+                  size={30}
+                />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name='Settings'
+            component={Settings}
+            options={{
+              tabBarIcon: () => (
+                <SimpleLineIcons
+                  name='settings'
+                  color={colors.grey}
+                  size={30}
+                />
               ),
             }}
           />
