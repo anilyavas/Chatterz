@@ -26,9 +26,11 @@ const HomeScreen = () => {
     <SafeAreaView style={styles.container}>
       <HomeTopContainer />
       <StoryList />
-      {/* BottomSheet will next */}
       <BottomSheet
-        backgroundStyle={{ backgroundColor: colors.grey }}
+        backgroundStyle={{
+          backgroundColor: colors.black,
+          borderWidth: 1,
+        }}
         snapPoints={snapPoints}
       >
         <Tab.Navigator
@@ -40,8 +42,12 @@ const HomeScreen = () => {
             name='Messages'
             component={Messages}
             options={{
-              tabBarIcon: () => (
-                <AntDesign name='message1' size={30} color={colors.grey} />
+              tabBarIcon: ({ focused }) => (
+                <AntDesign
+                  name='message1'
+                  size={30}
+                  color={focused ? colors.snow : colors.grey}
+                />
               ),
             }}
           />
@@ -49,8 +55,12 @@ const HomeScreen = () => {
             name='Calls'
             component={Calls}
             options={{
-              tabBarIcon: () => (
-                <Feather name='phone-call' size={30} color={colors.grey} />
+              tabBarIcon: ({ focused }) => (
+                <Feather
+                  name='phone-call'
+                  size={30}
+                  color={focused ? colors.snow : colors.grey}
+                />
               ),
             }}
           />
@@ -58,10 +68,10 @@ const HomeScreen = () => {
             name='Contacts'
             component={Contacts}
             options={{
-              tabBarIcon: () => (
+              tabBarIcon: ({ focused }) => (
                 <FontAwesome5
                   name='user-circle'
-                  color={colors.grey}
+                  color={focused ? colors.snow : colors.grey}
                   size={30}
                 />
               ),
@@ -71,10 +81,10 @@ const HomeScreen = () => {
             name='Settings'
             component={Settings}
             options={{
-              tabBarIcon: () => (
+              tabBarIcon: ({ focused }) => (
                 <SimpleLineIcons
                   name='settings'
-                  color={colors.grey}
+                  color={focused ? colors.snow : colors.grey}
                   size={30}
                 />
               ),

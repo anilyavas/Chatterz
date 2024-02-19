@@ -5,7 +5,7 @@ import MessageContainer from '../components/MessageContainer';
 
 const Messages = () => {
   return (
-    <View style={{ backgroundColor: colors.dark, flex: 1 }}>
+    <View style={{ backgroundColor: colors.black, flex: 1 }}>
       <MessageContainer />
     </View>
   );
