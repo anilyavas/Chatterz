@@ -24,7 +24,6 @@ export default StoryList;
 const styles = StyleSheet.create({
   list: {
     gap: 20,
-    flexGrow: 1,
     paddingHorizontal: 10,
     paddingTop: 70,
   },
