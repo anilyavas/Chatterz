@@ -7,11 +7,14 @@ import Messages from './Messages';
 import Calls from './Calls';
 import BottomSheet from '@gorhom/bottom-sheet';
 import { useMemo } from 'react';
+import { AntDesign, Feather } from '@expo/vector-icons';
+import { useTheme } from 'react-native-paper';
 
 const Tab = createMaterialBottomTabNavigator();
-const { width, height } = Dimensions.get('window');
 const HomeScreen = () => {
-  const snapPoints = useMemo(() => ['70%', '92%'], []);
+  const theme = useTheme();
+  theme.colors.secondaryContainer = 'transparent';
+  const snapPoints = useMemo(() => ['70%'], []);
   return (
     <SafeAreaView style={styles.container}>
       <HomeTopContainer />
@@ -22,16 +25,28 @@ const HomeScreen = () => {
         snapPoints={snapPoints}
       >
         <Tab.Navigator
+          initialRouteName='Messages'
           barStyle={{ backgroundColor: colors.black }}
           activeColor={colors.snow}
-          inactiveColor={colors.grey}
         >
           <Tab.Screen
             name='Messages'
             component={Messages}
-            options={{ tabBarColor: colors.grey }}
+            options={{
+              tabBarIcon: () => (
+                <AntDesign name='message1' size={30} color={colors.grey} />
+              ),
+            }}
           />
-          <Tab.Screen name='Calls' component={Calls} />
+          <Tab.Screen
+            name='Calls'
+            component={Calls}
+            options={{
+              tabBarIcon: () => (
+                <Feather name='phone-call' size={30} color={colors.grey} />
+              ),
+            }}
+          />
         </Tab.Navigator>
       </BottomSheet>
     </SafeAreaView>

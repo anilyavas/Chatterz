@@ -18,6 +18,23 @@ const MessageContainer = () => {
               </Text>
               <Text style={styles.lastMessage}>How are you?</Text>
             </View>
+            <View
+              style={{
+                flex: 1,
+                flexDirection: 'row',
+                justifyContent: 'flex-end',
+                paddingRight: 15,
+              }}
+            >
+              <Text
+                style={{
+                  color: colors.grey,
+                  paddingTop: 15,
+                }}
+              >
+                2 min ago
+              </Text>
+            </View>
           </View>
         )}
       />
