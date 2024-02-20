@@ -1,7 +1,14 @@
-import { View, Text, FlatList, Image, StyleSheet } from 'react-native';
+import {
+  View,
+  Text,
+  FlatList,
+  Image,
+  StyleSheet,
+  Pressable,
+} from 'react-native';
 import { dummyData } from '../assets/data/dummyData';
 import { colors } from '../constants/colors';
-import { Feather } from '@expo/vector-icons';
+import { Feather, AntDesign } from '@expo/vector-icons';
 const CallContainer = () => {
   return (
     <View>
@@ -31,6 +38,23 @@ const CallContainer = () => {
                   />
                   <Text style={{ color: colors.snow }}>Today 9.30 AM</Text>
                 </View>
+              </View>
+              <View style={{ flex: 1 }} />
+              <View
+                style={{
+                  flexDirection: 'row',
+                  gap: 30,
+                  paddingRight: 10,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <Pressable>
+                  <Feather name='phone-call' color={colors.grey} size={30} />
+                </Pressable>
+                <Pressable>
+                  <AntDesign name='videocamera' size={30} color={colors.grey} />
+                </Pressable>
               </View>
             </View>
           </View>
