@@ -1,16 +1,20 @@
-import { View, Text, Image, StyleSheet } from 'react-native';
-import React from 'react';
+import { View, Text, Image, StyleSheet, Pressable } from 'react-native';
 import { dummyData } from '../assets/data/dummyData';
 import { colors } from '../constants/colors';
 import { FlatList } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
 
 const MessageContainer = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <FlatList
         data={dummyData}
         renderItem={({ item }) => (
-          <View style={styles.messageContainer}>
+          <Pressable
+            onPress={() => navigation.navigate('ChatScreen')}
+            style={styles.messageContainer}
+          >
             <Image source={{ uri: item.imageLink }} style={styles.image} />
             <View style={styles.secondContainer}>
               <Text style={styles.name}>
@@ -35,7 +39,7 @@ const MessageContainer = () => {
                 2 min ago
               </Text>
             </View>
-          </View>
+          </Pressable>
         )}
       />
     </View>
@@ -50,6 +54,8 @@ const styles = StyleSheet.create({
   messageContainer: {
     flexDirection: 'row',
     paddingTop: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.grey,
   },
   secondContainer: {
     paddingLeft: 15,
