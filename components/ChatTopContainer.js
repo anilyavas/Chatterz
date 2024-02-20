@@ -16,7 +16,19 @@ const ChatTopContainer = () => {
         <Text style={styles.name}>
           {dummyData[1].name} {dummyData[1].surname}
         </Text>
-        <Text style={styles.status}>Active Now</Text>
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <Text
+            style={{
+              fontSize: 14,
+              color: colors.green,
+              textAlign: 'center',
+              paddingRight: 5,
+            }}
+          >
+            O
+          </Text>
+          <Text style={styles.status}>Active Now</Text>
+        </View>
       </View>
       <View style={{ flex: 1 }} />
       <View style={styles.callContainer}>
